@@ -18,8 +18,7 @@ let app = new Vue({
 			name: "",
 			pizza: "",
 			email: "",
-			_1109: true,
-			_1809: true	
+			_1109: true
 		},
 		anmeldungen: [],
 		formSend: false,

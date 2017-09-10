@@ -17,9 +17,6 @@ block content
 						.dates
 							input(v-model="user._1109" type="checkbox" id="1109")
 							label(for="1109") 11.09.2017
-						.dates
-							input(v-model="user._1809" type="checkbox" id="1809")
-							label(for="1809") 18.09.2017
 						button(tabindex="0" @click="signup") Eintragen
 				.error {{ error }}
 				.signupSuccessfull(v-if="formSend")
@@ -34,13 +31,11 @@ block content
 					tr
 						th Name
 						th 11.09
-						th 18.09
 						th Pizzawunsch
 				tbody
 					tr(v-for="user in anmeldungen")
 						th {{ user.name }}
-						th {{(user._1109 ? 'Ja' : 'Nein')}}
-						th {{(user._1809 ? 'Ja' : 'Nein')}}
+						th {{(user._1109 === "true" ? 'Ja' : 'Nein')}}
 						th.word {{ user.pizza }}
 	script(src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js")
 	script(src="https://unpkg.com/vue@2.4.2/dist/vue.min.js")

@@ -29,8 +29,7 @@ router.post('/add', function(req, res, next) {
     name: req.body.name,
     pizza: req.body.pizza,
     email: req.body.email,
-    _1109: req.body._1109,
-    _1809: req.body._1809,
+    _1109: req.body._1109
 
   // post to db successfull
   }).then(function (snap) {
@@ -41,7 +40,7 @@ router.post('/add', function(req, res, next) {
     // initiate email 
     let html = `<h1 style="font-family: monospace; margin: 0">Jo ${name}, deine Bestellung bei Rolfes\' Seminarfach Pizzabesteller ist eingegangen.</h1> <h1><a style="font-family: monospace;" href="https://malts.me/pizza/api/confirm/${validationId}">Bestellung bestätigen</a></h1>`;
     var msg = {
-      from: 'me@malts.me',
+      from: 'noreply@pizza.malts.me',
       from_name: 'Malte\'s Pizzaservice',
       to: email,
       subject: 'Pizzabestellung bestätigen',
