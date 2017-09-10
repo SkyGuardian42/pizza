@@ -34,9 +34,9 @@ block content
 						th Pizzawunsch
 				tbody
 					tr(v-for="user in anmeldungen")
-						th {{ user.name }}
+						th.word(:class="(user.name == 'Malte Janßen' ? 'nice' : '')") {{ user.name }}
 						th {{(user._1109 === "true" ? 'Ja' : 'Nein')}}
 						th.word {{ user.pizza }}
 	script(src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js")
-	script(src="https://unpkg.com/vue@2.4.2/dist/vue.min.js")
+	script(src="https://unpkg.com/vue@2.4.2/dist/vue.js")
 	script(src="javascripts/app.js")
