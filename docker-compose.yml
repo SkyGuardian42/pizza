@@ -1,0 +1,14 @@
+version: "2"
+services:
+  node:
+    image: node:8
+    container_name: pizza
+    volumes:
+    - ./app:/app
+    ports:
+    - "8080:8081"
+    environment:
+    - NODE_ENV = DEV
+    - PORT = 8080
+    working_dir: /app
+    command: bash -c "npm start"

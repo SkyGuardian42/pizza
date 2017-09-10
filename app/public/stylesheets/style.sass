@@ -1,0 +1,56 @@
+// @import 'skeleton/core/_typography'
+@import 'skeleton/skeleton'
+
+body
+  font-family: "Inconsolata", monospace
+  margin: 0
+.app h3
+  border-bottom: 2px solid black
+.pizza
+  z-index: -99
+  background: url("/images/pizza.svg")
+  position: fixed
+  width: 100%
+  height: 100%
+  background-size: 60px
+.bg
+  background: white
+.wrap
+  max-width: 800px
+  margin: 0 auto
+  padding: .2rem
+  min-height: 65vh
+.header
+  background-size: 60px
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 30vh
+  flex-direction: column
+  h1, h2, h3, h4
+    padding: .3rem
+    display: inline
+    color: black
+    text-align: center
+    margin: 0
+    background: white
+
+.send-input
+  display: flex
+  width: 100%
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+.dates
+  margin-bottom: .5rem
+  input
+    margin: 0
+  label
+    margin-bottom: 0
+    display: inline
+.error
+  color: #da3838
+  font-weight: 600
+  text-decoration: underline
+th.word
+  word-break: break-word

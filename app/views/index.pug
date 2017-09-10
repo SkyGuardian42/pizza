@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	include includes/header
+	.bg
+		.wrap#app
+			.anmelden
+				h3 Anmelden
+				.form(v-if="!formSend")
+					label(for="name") Name
+					input.u-full-width(v-model="user.name" type="text" id="name" placeholder="Dein Name" maxlength="50")
+					label(for="email") Email
+					input.u-full-width(v-model="user.email" placeholder="Deine Email" type="email" id="email")
+					label(for="pizza") Pizzawunsch
+					input.u-full-width(v-model="user.pizza" placeholder="Am besten Hawai" type="text" id="pizza" maxlength="60")
+					.send-input
+						.dates
+							input(v-model="user._1109" type="checkbox" id="1109")
+							label(for="1109") 11.09.2017
+						.dates
+							input(v-model="user._1809" type="checkbox" id="1809")
+							label(for="1809") 18.09.2017
+						button(tabindex="0" @click="signup") Eintragen
+				.error {{ error }}
+				.signupSuccessfull(v-if="formSend")
+					h2 Pizza erfolgreich bestellt!
+					p Check deinen Emaileingang nach der Bestätigungsemail, und schau auch in deinem Spamordner nach, ich benutz nen schlechten gratis Mailservice.
+					p Bei weiteren Fragen kannst du mir auch ne Mail an 
+						a(href="mailto:me@malts.me") me@malts.me 
+						| schicken
+			h3 Anmeldungen
+			table.u-full-width
+				thead
+					tr
+						th Name
+						th 11.09
+						th 18.09
+						th Pizzawunsch
+				tbody
+					tr(v-for="user in anmeldungen")
+						th {{ user.name }}
+						th {{(user._1109 ? 'Ja' : 'Nein')}}
+						th {{(user._1809 ? 'Ja' : 'Nein')}}
+						th.word {{ user.pizza }}
+	script(src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js")
+	script(src="https://unpkg.com/vue@2.4.2/dist/vue.js")
+	script(src="javascripts/app.js")
