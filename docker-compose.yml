@@ -11,4 +11,4 @@ services:
     - NODE_ENV = DEV
     - PORT = 8080
     working_dir: /app
-    command: bash -c "npm start"
+    command: bash -c "npm install && npm start"
