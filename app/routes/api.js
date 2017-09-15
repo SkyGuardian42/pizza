@@ -38,7 +38,7 @@ router.post('/add', function(req, res, next) {
     const name = req.body.name.split(' ')[0];
 
     // initiate email 
-    let html = `<h1 style="font-family: monospace; margin: 0">Jo ${name}, deine Bestellung bei Rolfes\' Seminarfach Pizzabesteller ist eingegangen.</h1> <h1><a style="font-family: monospace;" href="https://malts.me/pizza/api/confirm/${validationId}">Bestellung bestätigen</a></h1>`;
+    let html = `<h1 style="font-family: monospace; margin: 0">Jo ${name}, deine Bestellung bei Rolfes\' Seminarfach Pizzabesteller ist eingegangen.</h1> <h1><a style="font-family: monospace;" href="https://pizza.malts.me/api/confirm/${validationId}">Bestellung bestätigen</a></h1>`;
     var msg = {
       from: 'noreply@pizza.malts.me',
       from_name: 'Malte\'s Pizzaservice',
