@@ -12,3 +12,4 @@ services:
     - PORT = 8081
     working_dir: /app
     command: bash -c "npm install && npm start"
+    restart: always
